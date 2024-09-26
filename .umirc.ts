@@ -1,5 +1,8 @@
 import { defineConfig } from 'umi';
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
+//import * as process from "node:process";
+//import {merge} from "lodash";
+
 
 export default defineConfig({
     title: 'Taier | DTStack',
@@ -32,6 +35,17 @@ export default defineConfig({
         },
     ],
     chainWebpack(memo, { env }) {
+		// const fontRule = memo.module.rule('fonts');
+		// fontRule.uses.clear();
+		// fontRule.use('url-loader').tap(options => merge(options, {
+		// 		fallback: {
+		// 			options: { // file-loader 的 options
+		// 				publicPath: '/static/'
+		// 			}
+		// 		}
+		// 	}));
+
+
         memo.output.globalObject('this').set('globalObject', 'this');
         memo.entry('sparksql.worker').add('monaco-sql-languages/out/esm/sparksql/sparksql.worker.js');
         memo.entry('sql.worker').add('monaco-sql-languages/out/esm/sql/sql.worker.js');
@@ -55,9 +69,9 @@ export default defineConfig({
     },
     esbuild: {},
     theme: {
-        //'primary-color': '#3f87ff',
+        'primary-color': '#1677ff',
         'border-radius-base': '4px',
-		// 'ant-prefix': 'as'
+		// 'ant-prefix': 'a'
     },
     tailwindcss: {},
 	proxy: {
@@ -69,5 +83,5 @@ export default defineConfig({
 	},
 	qiankun: {
 		slave: {}
-	}
+	},
 });

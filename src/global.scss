@@ -20,3 +20,7 @@ code {
 #root {
     height: 100%;
 }
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+	box-shadow: none !important;
+}

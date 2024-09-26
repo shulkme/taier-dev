@@ -25,5 +25,5 @@ message.config({
 });
 
 export default function Layout(props: { children: React.ReactElement }) {
-    return <ConfigProvider locale={zhCN}>{props.children}</ConfigProvider>;
+    return <ConfigProvider locale={zhCN} >{props.children}</ConfigProvider>;
 }

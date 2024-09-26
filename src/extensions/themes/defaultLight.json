@@ -5,6 +5,9 @@
 		"scrollbarSlider.activeBackground": "#00000099",
         "scrollbarSlider.background": "#64646466",
 		"scrollbarSlider.hoverBackground": "#646464b3",
-        "terminal.ansiBlue": "#3f87ff"
-    }
+        "terminal.ansiBlue": "#3f87ff",
+		"editorGroupHeader.tabsBackground": "#f2f5fa",
+		"sideBar.background": "#f2f5fa",
+		"tab.inactiveBackground": "#f2f5fa"
+	}
 }

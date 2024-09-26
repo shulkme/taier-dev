@@ -101,26 +101,26 @@ function initializeColorTheme() {
         molecule.colorTheme.setTheme(defaultTheme.id);
     } else {
         // 默认加载 DtStack 主题色
-       // molecule.colorTheme.setTheme('DTStack Theme');
-		molecule.colorTheme.setTheme('Default Light+');
+        molecule.colorTheme.setTheme('Default Light+');
+		//molecule.colorTheme.setTheme('GitHub Plus');
     }
 
-    const currentThemeMode = molecule.colorTheme.getColorThemeMode();
-    //if (currentThemeMode === ColorThemeMode.dark) {
+     const currentThemeMode = molecule.colorTheme.getColorThemeMode();
+    // if (currentThemeMode === ColorThemeMode.dark) {
     //    loadStyles('/assets/antd.dark.css');
-    //}
-    document.documentElement.setAttribute('data-prefers-color', currentThemeMode);
-
-    // molecule.colorTheme.onChange((_, nextTheme, themeMode) => {
-    //     localStorage.setItem(ID_COLLECTIONS.COLOR_THEME_ID, nextTheme.id);
-    //     document.documentElement.setAttribute('data-prefers-color', themeMode);
+    // }
+     document.documentElement.setAttribute('data-prefers-color', currentThemeMode);
 	//
-    //     if (themeMode === ColorThemeMode.dark) {
-    //         loadStyles('/assets/antd.dark.css');
-    //     } else {
-    //         removeStyles();
-    //     }
-    // });
+    molecule.colorTheme.onChange((_, nextTheme, themeMode) => {
+        localStorage.setItem(ID_COLLECTIONS.COLOR_THEME_ID, nextTheme.id);
+        document.documentElement.setAttribute('data-prefers-color', themeMode);
+
+        // if (themeMode === ColorThemeMode.dark) {
+        //     loadStyles('/assets/antd.dark.css');
+        // } else {
+        //     removeStyles();
+        // }
+    });
 }
 
 /**
