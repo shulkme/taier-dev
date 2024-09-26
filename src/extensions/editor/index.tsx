@@ -102,7 +102,8 @@ function emitEvent() {
 
 
 						// 跳转至主应用的运维
-						history.push('/devops/cycle/task');
+
+						window.open('/devops/cycle/task')
                         // history.push({
                         //     query: {
                         //         drawer: targetDrawer,
