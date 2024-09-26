@@ -1,0 +1,113 @@
+{
+	"name": "taier",
+	"private": true,
+	"scripts": {
+		"start": "umi dev",
+		"build": "umi build",
+		"postinstall": "umi generate tmp",
+		"prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+		"test": "umi-test",
+		"test:coverage": "umi-test --coverage",
+		"lint:es": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+		"lint:css": "stylelint \"src/**/*.{css,scss}\""
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"engines": {
+		"npm": ">=8.0.0 <9.0.0",
+		"node": ">=14.0.0 <18.0.0"
+	},
+	"lint-staged": {
+		"*.{md,json}": [
+			"prettier --write --no-error-on-unmatched-pattern"
+		],
+		"*.{css,scss}": [
+			"stylelint --fix",
+			"prettier --write"
+		],
+		"*.{js,jsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.{ts,tsx}": [
+			"eslint --fix",
+			"prettier --parser=typescript --write"
+		]
+	},
+	"dependencies": {
+		"@ant-design/icons": "^4.7.0",
+		"@dtinsight/dt-utils": "^1.0.9",
+		"@dtinsight/molecule": "1.3.4",
+		"@handsontable/react": "^11.1.0",
+		"antd": "^4.22.3",
+		"async-validator": "^4.0.7",
+		"base-64": "^1.0.0",
+		"classnames": "^2.3.1",
+		"copy-to-clipboard": "^3.3.1",
+		"d3-selection": "1.1.0",
+		"echarts": "3.8.5",
+		"handsontable": "^11.1.0",
+		"lodash": "^4.17.21",
+		"md5": "^2.3.0",
+		"moment": "^2.29.1",
+		"monaco-sql-languages": "^0.9.4",
+		"mxgraph": "4.0.6",
+		"object-assign": "^4.1.1",
+		"react": "~18.2.0",
+		"react-copy-to-clipboard": "^5.1.0",
+		"react-dom": "~18.2.0",
+		"react-router-dom": "^6.0.2",
+		"react-use": "^17.4.0",
+		"reflect-metadata": "^0.1.13",
+		"tsyringe": "^4.6.0",
+		"umi": "^3.5.20",
+		"whatwg-fetch": "^3.6.2"
+	},
+	"devDependencies": {
+		"@swc/core": "^1.3.25",
+		"@swc/jest": "^0.2.24",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.3.0",
+		"@typed-mxgraph/typed-mxgraph": "^1.0.6",
+		"@types/base-64": "^1.0.0",
+		"@types/d3-selection": "1.1.0",
+		"@types/echarts": "^4.9.12",
+		"@types/jest": "^27.5.1",
+		"@types/lodash": "^4.14.177",
+		"@types/md5": "^2.3.2",
+		"@types/object-assign": "^4.0.30",
+		"@types/progress": "^2.0.5",
+		"@types/react": "^18.0.15",
+		"@types/react-copy-to-clipboard": "^5.0.3",
+		"@types/react-dom": "^18.0.6",
+		"@types/testing-library__jest-dom": "^5.14.5",
+		"@umijs/plugin-esbuild": "^1.4.1",
+		"@umijs/plugin-qiankun": "^2.44.1",
+		"@umijs/plugin-sass": "^1.1.1",
+		"@umijs/preset-react": "1.x",
+		"@umijs/test": "^3.5.20",
+		"ant-design-testing": "^0.1.0-beta.4",
+		"colors": "^1.4.0",
+		"commander": "^9.0.0",
+		"identity-obj-proxy": "^3.0.0",
+		"inquirer": "^8.2.0",
+		"jest-canvas-mock": "^2.4.0",
+		"ko-lint-config": "^2.2.16",
+		"lint-staged": "^10.0.7",
+		"monaco-editor-webpack-plugin": "^6.0.0",
+		"mustache": "^4.2.0",
+		"progress": "^2.0.3",
+		"request-promise": "^4.2.6",
+		"resize-observer-polyfill": "^1.5.1",
+		"stylelint": "^14.16.1",
+		"timezone-mock": "^1.3.6",
+		"tslib": "^2.3.1",
+		"typescript": "4.7.4",
+		"umi-plugin-tailwindcss": "^3.2.1",
+		"yorkie": "^2.0.0"
+	},
+	"resolutions": {
+		"dt-sql-parser": "4.0.0-beta.3.2"
+	}
+}
