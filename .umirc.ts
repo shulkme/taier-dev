@@ -9,7 +9,7 @@ export default defineConfig({
     favicon: 'images/favicon.png',
     hash: true,
     publicPath: './',
-    base: '/develop/taier',
+    base: '/develop/ide',
     ignoreMomentLocale: true,
     targets: {
         ios: false,

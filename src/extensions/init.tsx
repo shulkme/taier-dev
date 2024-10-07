@@ -63,15 +63,15 @@ export default class InitializeExtension implements IExtension {
     activate(): void {
         initializeColorTheme();
         initializeEntry();
-        //initResourceManager();
-        //initFunctionManager();
-        initializePane();
-        //initMenuBar();
-        //initLogin();
-        initExplorer();
-        //initDataSource();
-        initLanguage();
-        initExpandCollapse();
+		initializePane();
+		initExplorer();
+		initLanguage();
+		initExpandCollapse();
+        // initResourceManager();
+        // initFunctionManager();
+        // initMenuBar();
+        // initLogin();
+        // initDataSource();
 		// 默认不展示
 		molecule.layout.togglePanelVisibility();
 		molecule.layout.toggleActivityBarVisibility();
