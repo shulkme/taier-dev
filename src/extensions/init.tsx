@@ -67,16 +67,16 @@ export default class InitializeExtension implements IExtension {
 		initExplorer();
 		initLanguage();
 		initExpandCollapse();
-         initResourceManager();
-         initFunctionManager();
-         initMenuBar();
-         initLogin();
-         initDataSource();
+        // initResourceManager();
+        // initFunctionManager();
+        // initMenuBar();
+        // initLogin();
+        // initDataSource();
 		// 默认不展示
-		//molecule.layout.togglePanelVisibility();
-		//molecule.layout.toggleActivityBarVisibility();
-		//molecule.layout.toggleStatusBarVisibility();
-		//molecule.layout.toggleMenuBarVisibility();
+		molecule.layout.togglePanelVisibility();
+		molecule.layout.toggleActivityBarVisibility();
+		molecule.layout.toggleStatusBarVisibility();
+		molecule.layout.toggleMenuBarVisibility();
     }
     dispose(): void {
         throw new Error('Method not implemented.');
