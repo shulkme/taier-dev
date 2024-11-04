@@ -37,7 +37,7 @@ import StreamTask from '@/pages/operation/streamTask';
 import Task from '@/pages/operation/task';
 import { taskRenderService } from '@/services';
 import type { ITaskRenderState } from '@/services/taskRenderService';
-import { getCookie } from '@/utils';
+import {getCookie, goToTaskDev} from '@/utils';
 import ClusterManage from './console/cluster';
 import ClusterDetail from './console/cluster/detail';
 import QueueManage from './console/queue';
@@ -63,6 +63,16 @@ const MoleculeProvider = () => moInstance.render(<Workbench />);
 export default connect(taskRenderService, ({ supportTaskList }: ITaskRenderState) => {
     const [personList, setPersonList] = useState<IPersonLists[]>([]);
     const [username, setUsername] = useState<string | undefined>(undefined);
+
+	// 主应用唤醒
+	const masterProps = window.$wujie?.props
+	useEffect(() => {
+		console.log(masterProps)
+		if (masterProps?.taskId) {
+			taskRenderService.openTask({ id: masterProps.taskId.toString() });
+		}
+	}, [masterProps]);
+
 
     const checkLoginStatus = () => {
         const usernameInCookie = getCookie('username');
@@ -278,10 +288,12 @@ export default connect(taskRenderService, ({ supportTaskList }: ITaskRenderState
                 return confirmationMessage; // Webkit, Safari, Chrome
             }
         }
-        window.addEventListener('beforeunload', handleBeforeLeave);
 
-        return () => window.removeEventListener('beforeunload', handleBeforeLeave);
+        return () => {
+			window.removeEventListener('beforeunload', handleBeforeLeave)
+		};
     }, []);
+
 
     return (
         <Context.Provider

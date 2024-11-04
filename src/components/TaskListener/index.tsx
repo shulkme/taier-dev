@@ -4,6 +4,7 @@ import { EventBus } from '@dtinsight/molecule/esm/common/event';
 import { connect } from '@dtinsight/molecule/esm/react';
 
 import { ID_COLLECTIONS } from '@/constant';
+import {goToTaskDev} from "@/utils";
 
 /**
  * For get the latest current value after current changed and notice the non-jsx component
